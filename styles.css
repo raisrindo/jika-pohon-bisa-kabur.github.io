@@ -136,6 +136,17 @@ body {
     }
 }
 
+#instruction {
+    display: none;
+    text-align: center;
+    position: absolute;
+    left: calc(50% - 170px);
+    top: calc(50% - 100px);
+    width: 362px;
+    height: 80px;
+    color: #525252;
+}
+
 #gameOver {
     display: none;
     text-align: center;

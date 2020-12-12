@@ -9,7 +9,9 @@ let enemy = document.querySelector("#enemy");
 
 let score = document.querySelector("#score");
 
+let instruction = document.querySelector("#instruction");
 let gameOver = document.querySelector("#gameOver");
+
 
 //deklarasi variabel score
 let interval = null;
@@ -21,13 +23,16 @@ let scoreCounter = () => {
     score.innerHTML = `My Score : <b>${playerScore}</b>`;
 };
 
+instruction.style.display = "block";
+
 
 //Game start 
 window.addEventListener("keydown", (start) => {
-    
+
     if (start.code == "Space") {
 
         gameOver.style.display = "none";
+        instruction.style.display = "none";
 
         enemy.classList.add("enemyActive");
         

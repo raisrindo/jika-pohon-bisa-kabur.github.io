@@ -1,71 +1,79 @@
-let container = document.querySelector("#container");
+// variabel untuk DOM selector
+
+let game = document.querySelector("#game");
+let cloud = document.querySelector("#cloud");
+let road = document.querySelector("#road");
+
 let tree = document.querySelector("#tree");
 let enemy = document.querySelector("#enemy");
-let road = document.querySelector("#road");
-let cloud = document.querySelector("#cloud");
+
 let score = document.querySelector("#score");
+
 let gameOver = document.querySelector("#gameOver");
 
-//declaring variable for score
+//deklarasi variabel score
 let interval = null;
 let playerScore = 0;
 
-
-//function for score
+//DOM nilai score
 let scoreCounter = () => {
     playerScore++;
     score.innerHTML = `My Score : <b>${playerScore}</b>`;
-}
+};
 
 
-//start Game
+//Game start 
 window.addEventListener("keydown", (start) => {
-    //    console.log(start);
+    
     if (start.code == "Space") {
-        gameOver.style.display = "none";
-        enemy.classList.add("enemyActive");
-        road.firstElementChild.style.animation = "roadAnimate 1.5s linear infinite";
-        cloud.firstElementChild.style.animation = "cloudAnimate 50s linear infinite";
 
-        //score
-        let playerScore = 0;
+        gameOver.style.display = "none";
+
+        enemy.classList.add("enemyActive");
+        
+        cloud.firstElementChild.style.animation = "cloudAnimate 80s linear infinite";
+        
+        road.firstElementChild.style.animation = "roadAnimate 2s linear infinite";
+        
         interval = setInterval(scoreCounter, 200);
     }
 });
 
 
-//jump Your Character
-window.addEventListener("keydown", (e) => {
-    //    console.log(e);
+//Melompat
+window.addEventListener("keydown", (x) => {
 
-    if (e.key == "ArrowUp")
+    if (x.key == "ArrowUp")
         if (tree.classList != "treeActive") {
             tree.classList.add("treeActive");
 
-            //                remove class after 0.5 seconds
+            //menghapus class setelah 500 mili second
             setTimeout(() => {
                 tree.classList.remove("treeActive");
             }, 500);
         }
 });
 
-//'Game Over' if 'Character' hit The 'enemy' 
+
+//Tabrakan
 let result = setInterval(() => {
     let treeBottom = parseInt(getComputedStyle(tree).getPropertyValue("bottom"));
-    //    console.log("treeBottom" + treeBottom);
 
     let enemyLeft = parseInt(getComputedStyle(enemy).getPropertyValue("left"));
-    //    console.log("enemyLeft" + enemyLeft);
 
     if (treeBottom <= 90 && enemyLeft >= 20 && enemyLeft <= 145) {
-        //        console.log("Game Over");
 
         gameOver.style.display = "block";
-        enemy.classList.remove("enemyActive");
-        road.firstElementChild.style.animation = "none";
+        
         cloud.firstElementChild.style.animation = "none";
+        road.firstElementChild.style.animation = "none";
+
+        enemy.classList.remove("enemyActive");
+                
         clearInterval(interval);
+        
         score.innerHTML = `My Score :  <b>${playerScore}</b>`
         playerScore = 0;
     }
-}, 10);
+
+}, 100);

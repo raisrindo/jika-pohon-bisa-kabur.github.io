@@ -8,25 +8,86 @@
 body {
     display: grid;
     place-items: center;
-    height: 100vh;
+}
+
+#title {
+    margin-top: 10vh;
 }
 
 #game {
     height: 400px;
-    width: 1200px;
+    width: 800px;
     position: relative;
     overflow: hidden;
 }
 
-#game #tree {
+#road {
+    height: 30px;
+    width: 800px;
+    position: absolute;
+    bottom: 0;
+}
+
+#road img {
+    height: 30px;
+    width: 2000px;
+    position: absolute;
+    left: 0;
+    animation: none;
+}
+
+@keyframes roadAnimate {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -800px;
+    }
+}
+
+#cloud {
+    height: 80px;
+    width: 800px;
+    border-radius: 40px;
+    position: absolute;
+    top: 30px;
+}
+
+#cloud img {
+    height: 80px;
+    width: 2000px;
+    position: absolute;
+    left: -2000px;
+}
+
+@keyframes cloudAnimate {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: -1000px;
+    }
+}
+
+#score {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+
+#tree {
     height: 70px;
     width: 70px;
     position: absolute;
     bottom: 28px;
-    left: 20px;
+    left: 100px;
 }
 
-#game #tree img {
+#tree img {
     height: 70px;
     width: 70px;
 }
@@ -48,21 +109,21 @@ body {
     }
 }
 
-#game #enemy {
+#enemy {
     height: 80px;
     width: 125px;
     position: absolute;
-    bottom: 20px;
-    right: -20px;
+    bottom: 28px;
+    right: 0px;
 }
 
-#game #enemy img {
+#enemy img {
     height: 80px;
     width: 125px;
 }
 
 .enemyActive {
-    animation: enemyAnimate 1s linear infinite;
+    animation: enemyAnimate 1500ms linear infinite;
 }
 
 @keyframes enemyAnimate {
@@ -75,71 +136,12 @@ body {
     }
 }
 
-#game #road {
-    height: 30px;
-    width: 1200px;
-    position: absolute;
-    bottom: 0;
-}
-
-#game #road img {
-    height: 30px;
-    width: 2000px;
-    position: absolute;
-    left: 0;
-    animation: none;
-}
-
-@keyframes roadAnimate {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: -800px;
-    }
-}
-
-#game #cloud {
-    height: 80px;
-    width: 1200px;
-    border-radius: 40px;
-    position: absolute;
-    top: 30px;
-}
-
-#game #cloud img {
-    height: 80px;
-    width: 2000px;
-    position: absolute;
-    left: -2000px;
-    animation: none;
-}
-
-@keyframes cloudAnimate {
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: -800px;
-    }
-}
-
-#score {
-    height: auto;
-    width: auto;
-    position: absolute;
-    top: 20px;
-    right: 0;
-}
-
 #gameOver {
     display: none;
-    font-size: 70px;
+    text-align: center;
     position: absolute;
-    left: calc(50% - 181px);
-    top: calc(50% - 40px);
+    left: calc(50% - 170px);
+    top: calc(50% - 100px);
     width: 362px;
     height: 80px;
     color: #525252;

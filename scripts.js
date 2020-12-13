@@ -17,6 +17,7 @@ let gameOver = document.querySelector("#gameOver");
 let interval = null;
 let playerScore = 0;
 
+
 //DOM nilai score
 let scoreCounter = () => {
     playerScore++;
@@ -41,6 +42,7 @@ window.addEventListener("keydown", (start) => {
         road.firstElementChild.style.animation = "roadAnimate 2s linear infinite";
         
         interval = setInterval(scoreCounter, 200);
+        
     }
 });
 
@@ -59,12 +61,13 @@ document.getElementById('start').onclick = function() {
 }
 
 
-
 //Melompat
 window.addEventListener("keydown", (x) => {
 
     if (x.key == "ArrowUp")
+       
         if (tree.classList != "treeActive") {
+
             tree.classList.add("treeActive");
 
             //menghapus class setelah 500 mili second
@@ -76,6 +79,7 @@ window.addEventListener("keydown", (x) => {
 
 // click event
 document.getElementById('up').onclick = function() {
+
     if (tree.classList != "treeActive") {
         tree.classList.add("treeActive");
 
@@ -89,6 +93,7 @@ document.getElementById('up').onclick = function() {
 
 //Tabrakan
 let result = setInterval(() => {
+
     let treeBottom = parseInt(getComputedStyle(tree).getPropertyValue("bottom"));
 
     let enemyLeft = parseInt(getComputedStyle(enemy).getPropertyValue("left"));
@@ -109,3 +114,5 @@ let result = setInterval(() => {
     }
 
 }, 100);
+
+

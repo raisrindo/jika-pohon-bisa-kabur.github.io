@@ -9,7 +9,7 @@
 
 <body>
     <div id="title">
-        <h1>JIKA POHON BISA KABUR !</h1>
+        <h1>ANDAI POHON BISA KABUR !</h1>
     </div>
 
     <div id="game">
@@ -18,8 +18,8 @@
 
         <div id="instruction">
             <h3>Cara Main</h3> <br>
-            <h4>Press space button to start</h4> <br>
-            <h4>Use arrow up button to jump</h4> <br>
+            <h4>Gunakan tombol "Start" untuk memulai game</h4>
+            <h4>Gunakan tombol "Jump" untuk melompat</h4> <br>
 
         </div>
 
@@ -44,20 +44,22 @@
             <p>Sepandai-pandai Pohon Kabur, <br>Manusia lebih SUPERIOR</p> <br>
             <h4>Jadilah Manusia Bijak !</h4> <br>
             <h5>AYO PEDULI LINGKUNGAN !</h5> <br>
-            <h6> press space button to restart </h6>
+            <h6>tekan tombol "Start" untuk memulai lagi</h6>
+
         </div>
     </div>
 
     <div id="btns">
-        <button id="start">
+        <button id="start" onmousedown="run.play()">
             <img src="assets/start.png" alt="start" class="startimg">
         </button>
-        <button id="up">
+        <button id="up" onmousedown="jumping.play()">
             <img src="assets/up.png" alt="up" class="upimg">
         </button>
     </div>
 
     <script src="scripts.js"></script>
+    <script src="sound.js"></script>
 </body>
 
 </html>

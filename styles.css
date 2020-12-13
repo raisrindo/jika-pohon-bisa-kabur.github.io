@@ -186,7 +186,7 @@ body {
 
 }
 
-#start img {
+.startimg {
     height: 30px;
     /* width: 125px; */
 }
@@ -203,7 +203,7 @@ body {
 
 }
 
-#up img {
+.upimg {
     height: 30px;
     width: 30px;
 }
@@ -211,12 +211,12 @@ body {
 @media screen and (max-width: 1000px) {
 
     #start,
-    #start img {
+    .startimg {
         height: 80px;
     }
 
     #up,
-    #up img {
+    .upimg {
         height: 80px;
         width: 80px;
     }

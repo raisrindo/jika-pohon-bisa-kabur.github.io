@@ -174,7 +174,7 @@ body {
 }
 
 #start {
-    margin-right: 20px;
+    margin-right: 40px;
     height: 30px;
     /* width: 125px; */
 
@@ -192,7 +192,7 @@ body {
 }
 
 #up {
-    margin-left: 20px;
+    margin-left: 40px;
     height: 30px;
     width: 30px;
 }
@@ -211,11 +211,11 @@ body {
 @media screen and (max-width: 1000px) {
 
     #start {
-        margin-right: 120px;
+        margin-right: 60px;
     }
 
     #up {
-        margin-left: 120px;
+        margin-left: 60px;
     }
 
 

@@ -31,8 +31,15 @@ let playerScore = 0;
 
 //DOM nilai score
 let scoreCounter = () => {
-    playerScore++;
     score.innerHTML = `My Score : <b>${playerScore}</b>`;
+    if (enemy.classList == "enemyActive") {
+        playerScore = playerScore+1;
+    } else if(enemy.classList != "enemyActive"){
+        playerScore = 0;
+    } 
+    else{
+        playerScore = 0;
+    }
 };
 
 instruction.style.display = "block";
@@ -82,19 +89,21 @@ document.getElementById('start').onclick = function() {
 //Melompat
 window.addEventListener("keydown", (x) => {
 
-    if (x.key == "ArrowUp")
+    if (x.key == "ArrowUp"){
 
-    upup.play();
-       
-        if (tree.classList != "treeActive") {
+        upup.play();
+           
+            if (tree.classList != "treeActive") {
+    
+                tree.classList.add("treeActive");
+    
+                //menghapus class setelah 500 mili second
+                setTimeout(() => {
+                    tree.classList.remove("treeActive");
+                }, 500);
+            }
+    }
 
-            tree.classList.add("treeActive");
-
-            //menghapus class setelah 500 mili second
-            setTimeout(() => {
-                tree.classList.remove("treeActive");
-            }, 500);
-        }
 });
 
 // click event
@@ -135,6 +144,7 @@ let result = setInterval(() => {
         score.innerHTML = `My Score :  <b>${playerScore}</b>`
         playerScore = 0;
     }
+
 }, 100);
 
 

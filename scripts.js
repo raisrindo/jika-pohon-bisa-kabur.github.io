@@ -44,6 +44,21 @@ window.addEventListener("keydown", (start) => {
     }
 });
 
+// click event
+document.getElementById('start').onclick = function() {
+    gameOver.style.display = "none";
+    instruction.style.display = "none";
+
+    enemy.classList.add("enemyActive");
+    
+    cloud.firstElementChild.style.animation = "cloudAnimate 80s linear infinite";
+    
+    road.firstElementChild.style.animation = "roadAnimate 2s linear infinite";
+    
+    interval = setInterval(scoreCounter, 200);
+}
+
+
 
 //Melompat
 window.addEventListener("keydown", (x) => {
@@ -58,6 +73,18 @@ window.addEventListener("keydown", (x) => {
             }, 500);
         }
 });
+
+// click event
+document.getElementById('up').onclick = function() {
+    if (tree.classList != "treeActive") {
+        tree.classList.add("treeActive");
+
+        //menghapus class setelah 500 mili second
+        setTimeout(() => {
+            tree.classList.remove("treeActive");
+        }, 500);
+    }
+}
 
 
 //Tabrakan

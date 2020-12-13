@@ -157,3 +157,68 @@ body {
     height: 80px;
     color: #525252;
 }
+
+#btns {
+    margin-top: 5vh;
+    position: relative;
+
+}
+
+#start,
+#up {
+    background-color: none;
+    outline: none;
+    border: none;
+    /* cursor: pointer; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+}
+
+#start {
+    margin-right: 15px;
+    height: 30px;
+    /* width: 125px; */
+
+}
+
+#start:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+#start img {
+    height: 30px;
+    /* width: 125px; */
+}
+
+#up {
+    margin-left: 15px;
+    height: 30px;
+    width: 30px;
+}
+
+#up:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+#up img {
+    height: 30px;
+    width: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    #start,
+    #start img {
+        height: 80px;
+    }
+
+    #up,
+    #up img {
+        height: 80px;
+        width: 80px;
+    }
+
+}

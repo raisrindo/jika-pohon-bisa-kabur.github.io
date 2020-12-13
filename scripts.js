@@ -1,3 +1,10 @@
+// backsound using mousdown html
+// var jumping = new Audio();
+// jumping.src = "assets/jump.wav";
+
+// var run = new Audio();
+// run.src = "assets/run.wav";
+
 // variabel untuk DOM selector
 
 let game = document.querySelector("#game");
@@ -11,6 +18,10 @@ let score = document.querySelector("#score");
 
 let instruction = document.querySelector("#instruction");
 let gameOver = document.querySelector("#gameOver");
+
+let starting = document.querySelector("#starting");
+let upup = document.querySelector("#upup");
+let crashing = document.querySelector("#crashing");
 
 
 //deklarasi variabel score
@@ -32,7 +43,10 @@ window.addEventListener("keydown", (start) => {
 
     if (start.code == "Space") {
 
+        starting.play();
+
         gameOver.style.display = "none";
+
         instruction.style.display = "none";
 
         enemy.classList.add("enemyActive");
@@ -48,7 +62,11 @@ window.addEventListener("keydown", (start) => {
 
 // click event
 document.getElementById('start').onclick = function() {
+
+    starting.play();
+
     gameOver.style.display = "none";
+
     instruction.style.display = "none";
 
     enemy.classList.add("enemyActive");
@@ -65,6 +83,8 @@ document.getElementById('start').onclick = function() {
 window.addEventListener("keydown", (x) => {
 
     if (x.key == "ArrowUp")
+
+    upup.play();
        
         if (tree.classList != "treeActive") {
 
@@ -79,6 +99,8 @@ window.addEventListener("keydown", (x) => {
 
 // click event
 document.getElementById('up').onclick = function() {
+
+    upup.play();
 
     if (tree.classList != "treeActive") {
         tree.classList.add("treeActive");
@@ -101,6 +123,7 @@ let result = setInterval(() => {
     if (treeBottom <= 90 && enemyLeft >= 20 && enemyLeft <= 145) {
 
         gameOver.style.display = "block";
+        crashing.play();
         
         cloud.firstElementChild.style.animation = "none";
         road.firstElementChild.style.animation = "none";
@@ -112,7 +135,6 @@ let result = setInterval(() => {
         score.innerHTML = `My Score :  <b>${playerScore}</b>`
         playerScore = 0;
     }
-
 }, 100);
 
 

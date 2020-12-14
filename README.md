@@ -1,4 +1,5 @@
 # ANDAI POHON BISA KABUR (README)
+[![HitCount](http://hits.dwyl.com/raisrindo/raisrindogithubio.svg)](http://hits.dwyl.com/raisrindo/raisrindogithubio)
 
 It is fun game
 
